@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" href="bootstrap-4.6.0-dist/css/bootstrap.min.css">
+</head>
+<body>
+	<p class="col-md-12">Hello World!</p>
+	<div class="container">
+	<h2>Welcome!</h2>
+	<form class="form-inline" action="#" th:action="@{/thymeleaf}" method="post" th:object="${formInput}">
+	  <div class="form-group mb-2">
+	    <label >Please enter:</label>
+	  </div>
+	  <div class="form-group mx-sm-3 mb-2">
+	    <input type="text" class="form-control" placeholder="Enter a" th:field="*{a}" />
+	    <input type="text" class="form-control" placeholder="Enter b" th:field="*{b}" />
+	  	<input type="text" class="form-control" placeholder="Enter c" th:field="*{c}" />	  
+	  </div>
+	  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+	</form>
+	<label th:text="${formInput.toString()}"></label>
+	</div>
+	
+
+</body>
+</html>
